@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Trang chủ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" />
+    <link href="~/Content/css/unicons/css/unicons.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/css/semantic/semantic.min.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!-- Difference CSS  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/demo.css" />
+    <meta name="csrf-token" content="pWKYsTnljZgm1p0UVE49TcaqrKHop1jCQv3bw7bS" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/login/style.css" />
+
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    <link href="~/content/slideshow/assets/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/content/slideshow/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <script src="~/Content/SlideShow/jquery.min.js"></script>
+    <script src="~/Content/SlideShow/owl.carousel.min.js"></script>
+
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav id="nav" style="background-color:#F5F5F5;">
+        <div class="nav-top">
+            <div>
+                <div class="contact">
+                    <span><i style="color: #f7c24b"></i>0947.47.5661</span>
+                    <span style="margin: 0 5px 0 10px; color: rgb(255, 255, 255)">|</span>
+                    <span>
+                        <i style="color: #f7c24b"></i>
+                        online.education@gmail.com
+                    </span>
+                </div>
+                <div class="dn-dx">
+                    <ul class="nav navbar-nav">
+
+                        @if (ViewBag.UserModel == null)
+                        {
+                            <a class="dn-dx__login">@Html.ActionLink("Đăng nhập", "Index", "Login")</a>
+                            <span>|</span>
+                            <a class="dn-dx__signup">@Html.ActionLink("Đăng ký", "Index", "Register")</a>
+                        }
+                        else
+                        {
+                            <a class="dn-dx__login" href="/profile">@ViewBag.UserModel.FullName</a>
+                            <span>|</span>
+                            <a class="dn-dx__signup" href="/logout">Đăng xuất</a>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul id="nav-ul" class="wb ul">
+            <li class="btn-cll">
+                <a id="nav-collapse" class="mb nav-collapse" href="javascript:void(0);"><span>☰</span></a>
+            </li>
+            <li class="logo">
+                <a href="/home"><img src="~/Content/images/logo.jpg" alt="" /></a>
+            </li>
+            <li class="search">
+                <div>
+                    @using (Html.BeginForm("Index", "Search", FormMethod.Get))
+                    {
+                        if (ViewBag.txtSearch != null)
+                        {
+                            <input id="search_value" class="search__input" type="text" name="txtSearch" placeholder="@ViewBag.txtSearch" style="width: 100%" />
+                        }
+                        else
+                        {
+                            <input id="search_value" class="search__input" type="text" name="txtSearch"
+                                   placeholder="Bạn đang cần tìm khóa học..." style="width: 100%" />
+                        }
+                    }
+                </div>
+            </li>
+
+            <li class="links">
+                <a class="homepage" href="/home" data-language="2">Trang chủ</a>
+                <a class="ct">@Html.ActionLink("Liên hệ", "Index", "SlideShow")</a>
+            </li>
+            <li class="language">
+                <label class="switch">
+                    <input class="switch__checkbox" type="checkbox" />
+                    <span class="switch__slider round"></span>
+                </label>
+            </li>
+        </ul>
+    </nav>
+    <hr />
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="footer">
+        <section class="section section--8th">
+            <div class="footer-body">
+                <div class="row1">
+                    <div class="col col-1">
+                        <div class="cty">
+                            <h1 data-language="35">CÔNG TY TNHH DAVID</h1>
+                            <p><img class="lg-f" src="~/Content/images/logo.jpg" alt="" /></p>
+                            <p>
+                                <i class="uil uil-location-point"></i>
+                                <span data-language="36">Đại học FPT</span>
+                                <br />
+                                <i class="uil uil-phone-volume"></i>
+                                <span>Hotline: 0947475661</span>
+                            </p>
+                            <p><i class="uil uil-envelope"></i>hoconline@gmail.com</p>
+
+                        </div>
+                        <div class="social">
+                            <img src="#"
+                                 href="https://www.youtube.com/channel/UCbGCww89zkHi_-Ax7nzOXLw/videos?view_as=subscriber"
+                                 alt="" />
+                            <img src="#" alt="#" />
+
+                        </div>
+                    </div>
+                    <div class="col col-2">
+                        <h1 data-language="43">CHUYÊN MỤC</h1>
+                        <p>
+                            <a style="color: white" href="#">Excel</a>
+                        </p>
+                        <p>
+                            <a style="color: white" href="#">Phần mềm kế toán</a>
+                        </p>
+                        <p>
+                            <a style="color: white" href="#">
+                                Giới thiệu việc
+                                làm
+                            </a>
+                        </p>
+                        <p>
+                            <a style="color: white" href="#">Ứng dụngB</a>
+                        </p>
+                        <p>
+                            <a style="color: white" href="#">Kế toán - tài chính</a>
+                        </p>
+                        <p>
+                            <a style="color: white" href="#">Tài liệu chuyên ngành</a>
+                        </p>
+                        <p>
+                            <a style="color: white" href="#">Không có danh mục con</a>
+                        </p>
+                    </div>
+                    <div class="col col-3">
+                        <h1 data-language="40">TIN TỨC TÀI CHÍNH</h1>
+                        <a data-language="41" href="#">Xem lịch khai giảng</a>
+                        <p>123</p>
+                        <p>123</p>
+                        <p>123</p>
+                        <p>123</p>
+                    </div>
+                    <div class="col col-4">
+                    </div>
+                </div>
+                <div class="div1" style="border-bottom: none">
+                    <div id="div1__collaspe" class="div1__collaspe" style="text-align: center;
+                     padding-top: 15px;
+                     margin-bottom: -20px;">
+                        <a class="div1__a">© 2021 Kế toán DAVID - All rights reserved</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+    <script src="~/Content/js/index.js" defer></script>
+</body>
+</html>

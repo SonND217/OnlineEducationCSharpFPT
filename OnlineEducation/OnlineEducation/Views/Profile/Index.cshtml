@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/user.css" rel="stylesheet" />
+<body>
+    <section class="tcnvcd ctn-sn ctn-sn-1" style="margin-top: 110px">
+        <div class="tcnvcd nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="tcnvcd nav-link" id="nav-khdm-tab" data-bs-target="#khdm" role="tab" href="/Profile/MyCourse">
+                KHÓA HỌC ĐÃ MUA
+            </a>
+            <a class="tcnvcd nav-link active" id="nav-hscn-tab" data-bs-target="#hscn" role="tab" href="/Profile/Index">
+                HỒ SƠ CÁ NHÂN
+            </a>
+
+        </div>
+
+        <div class="tcnvcd sn tab-content" id="nav-tabContent">
+            <div class="tcnvcd tab-pane fade" id="khdm" role="tabpanel" aria-labelledby="nav-khdm-tab">
+                <div class="tcnvcd khdm">
+                    <div class="tcnvcd slider slider-content1" style="color: black">
+                    </div>
+                </div>
+            </div>
+            <div class="tcnvcd tab-pane fade show active" id="hscn" role="tabpanel" aria-labelledby="nav-hscn-tab">
+                <form action="" method="post">
+                    <input type="hidden" name="_token" value="tTXT53Dve8x0Vxi1Y81JSlQBsolCQyhVFDWCJqph">
+                    <div class="tcnvcd hscn">
+                        <div>
+                            <div>
+                                <img src="https://davidfc.vn/img/avatar/default.jpg" alt="" />
+                            </div>
+                            <div>
+
+                                <label for="hovaten" class="tcnvcd form-label">Họ và tên</label>
+                                <input type="text" class="tcnvcd form-control" id="hovaten" name='name'
+                                       value="Phan Đức Chiến" />
+                                <label for="email" class="tcnvcd form-label">Email</label>
+                                <input type="email" class="tcnvcd form-control" id="email"
+                                       value="phanchien625@gmail.com" disabled />
+                            </div>
+                            <div>
+                                <br>
+                                <label for="sdt" class="tcnvcd form-label">Số điện thoại</label>
+                                <input type="number" name="phone" class="tcnvcd form-control" id="sdt"
+                                       value="0947475661" />
+                            </div>
+                        </div>
+                        <button type="submit" class="tcnvcd btn btn-primary">
+                            Lưu thông tin
+                        </button>
+                        <div style="clear: both"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+
